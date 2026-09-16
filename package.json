@@ -1,0 +1,18 @@
+{
+  "name": "aplus-manager-root",
+  "version": "0.1.0",
+  "private": true,
+  "description": "A+Manager monorepo. Single address via gateway :26261 (/api/v1 -> :26260, rest -> web :26262). App: ./app (Expo). API: ./server (Node+SQLite).",
+  "scripts": {
+    "dev": "node tools/dev.mjs",
+    "dev:api": "npm --prefix server run dev",
+    "dev:web": "npm --prefix app run web",
+    "gateway": "node gateway/server.mjs",
+    "shot": "node tools/screenshot.mjs",
+    "brand": "node tools/render-brand.mjs",
+    "seed": "node tools/seed.mjs"
+  },
+  "devDependencies": {
+    "playwright": "^1.63.0"
+  }
+}

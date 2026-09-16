@@ -1,0 +1,28 @@
+# dependencies
+node_modules/
+
+# Expo / build output
+.expo/
+dist/
+web-build/
+expo-env.d.ts
+
+# generated native folders (kept out of git; regenerated via expo prebuild)
+app/ios/
+app/android/
+
+# codegraph index (regenerable: codegraph init / sync)
+.codegraph/
+
+# runtime data (schema auto-created on boot, sample data via `npm run seed`)
+server/data/*.db
+server/data/*.db-*
+
+# screenshot tool output
+tools/shots/
+
+# macOS
+.DS_Store
+
+# local env files
+.env*.local

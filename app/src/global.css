@@ -1,0 +1,24 @@
+:root {
+  --font-display:
+    Spline Sans, Inter, ui-sans-serif, system-ui, sans-serif, Apple Color Emoji, Segoe UI Emoji,
+    Segoe UI Symbol, Noto Color Emoji;
+  --font-mono:
+    ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, Liberation Mono, Courier New, monospace;
+  --font-rounded: 'SF Pro Rounded', 'Hiragino Maru Gothic ProN', Meiryo, 'MS PGothic', sans-serif;
+  --font-serif: Georgia, 'Times New Roman', serif;
+}
+
+/* Disable the browser's native focus outline / border box on inputs.
+   react-native-web renders <input>; on :focus the browser re-applies its
+   default focus ring (blue outline). We style focus ourselves via the
+   Field wrapper, so remove the native one entirely. */
+input,
+input:focus,
+input:focus-visible,
+textarea,
+textarea:focus,
+[role='textbox'],
+[role='textbox']:focus {
+  outline: none !important;
+  -webkit-tap-highlight-color: transparent;
+}

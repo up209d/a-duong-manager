@@ -1,0 +1,11 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="512" height="512" viewBox="0 0 512 512">
+  <!-- adaptive icon foreground: mark scaled to safe zone (~66%), white -->
+  <g transform="translate(102.4, 102.4) scale(0.6)">
+    <g fill="none" stroke="#FFFFFF" stroke-linecap="round" stroke-linejoin="round">
+      <path d="M128 384 L232 128 L336 384" stroke-width="52"/>
+      <path d="M176 288 L288 288" stroke-width="40"/>
+      <path d="M392 128 L392 216" stroke-width="34"/>
+      <path d="M348 172 L436 172" stroke-width="34"/>
+    </g>
+  </g>
+</svg>

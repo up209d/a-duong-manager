@@ -8,6 +8,8 @@
     "scheme": "aplusmanager",
     "userInterfaceStyle": "automatic",
     "ios": {
+      "bundleIdentifier": "com.up209d.aplusmanager",
+      "supportsTablet": false,
       "icon": "./assets/expo.icon"
     },
     "android": {

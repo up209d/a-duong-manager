@@ -13,7 +13,9 @@ export default function TabsLayout() {
         headerShown: false,
         tabBarActiveTintColor: Brand.accent,
         tabBarInactiveTintColor: Brand.mutedForeground,
-        tabBarStyle: { backgroundColor: Brand.card, borderTopColor: Brand.border, height: 52 },
+        // No fixed height: on iOS the bar must include the bottom safe-area
+        // (home indicator) inset or the labels get clipped at the screen edge.
+        tabBarStyle: { backgroundColor: Brand.card, borderTopColor: Brand.border },
         tabBarLabelStyle: { fontSize: 11, fontWeight: '600', lineHeight: 15 },
       }}>
       <Tabs.Screen

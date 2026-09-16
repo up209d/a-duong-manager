@@ -1,5 +1,4 @@
 import { Stack } from 'expo-router';
-import * as SplashScreen from 'expo-splash-screen';
 import { useEffect } from 'react';
 import { Platform } from 'react-native';
 
@@ -7,7 +6,8 @@ import { I18nProvider } from '@/i18n';
 import { ThemeProvider } from '@/theme';
 import { IconProvider } from '@/icons';
 
-SplashScreen.preventAutoHideAsync();
+// Native splash auto-hides on first render (default expo-splash-screen behavior).
+// Do NOT call preventAutoHideAsync() unless something else calls hideAsync().
 
 // Web: set title + favicon (Expo does not inject these from app.json in dev)
 function useWebChrome() {

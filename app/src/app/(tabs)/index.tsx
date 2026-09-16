@@ -1,6 +1,6 @@
 import { useEffect, useState } from 'react';
 import { Link } from 'expo-router';
-import { Image, ScrollView, Text, View } from 'react-native';
+import { Image, Pressable, ScrollView, Text, View } from 'react-native';
 import { SafeAreaView } from 'react-native-safe-area-context';
 import { LinearGradient } from 'expo-linear-gradient';
 
@@ -60,20 +60,25 @@ export default function HomeScreen() {
             <Image source={require('../../../assets/images/logo-mark.png')} style={{ width: 34, height: 34, borderRadius: 9, marginRight: 10 }} />
             <Text style={styles.brand}>{t('app_name')}</Text>
           </View>
-          <Link href="/settings" asChild>
-            <View
-              style={{
-                width: 38,
-                height: 38,
-                borderRadius: 19,
-                backgroundColor: Brand.card,
-                borderWidth: 1,
-                borderColor: Brand.border,
-                alignItems: 'center',
-                justifyContent: 'center',
-              }}>
+          {/* asChild links need a child that emits onPress (Pressable), not a plain View.
+              Layout style goes on the Link: Slot merges it onto the child, and a
+              function-style on the child gets clobbered by the slot merge. */}
+          <Link
+            href="/settings"
+            asChild
+            style={{
+              width: 38,
+              height: 38,
+              borderRadius: 19,
+              backgroundColor: Brand.card,
+              borderWidth: 1,
+              borderColor: Brand.border,
+              alignItems: 'center',
+              justifyContent: 'center',
+            }}>
+            <Pressable accessibilityRole="button">
               <Icon name="settings" size={20} color={Brand.foreground} />
-            </View>
+            </Pressable>
           </Link>
         </View>
 
@@ -131,9 +136,10 @@ export default function HomeScreen() {
               <Link
                 key={tile.key}
                 href={tile.href}
-                style={{ alignItems: 'center', paddingVertical: 10, flex: 1, minWidth: 96 }}
-                asChild>
-                <View style={{ alignItems: 'center', width: '100%' }}>
+                asChild
+                style={{ alignItems: 'center', paddingVertical: 10, flex: 1, minWidth: 96 }}>
+                <Pressable accessibilityRole="button">
+                  <View style={{ alignItems: 'center', width: '100%' }}>
                   <View
                     style={{
                       width: 54,
@@ -152,6 +158,7 @@ export default function HomeScreen() {
                     {t(tile.key)}
                   </Text>
                 </View>
+                </Pressable>
               </Link>
             ))}
           </View>

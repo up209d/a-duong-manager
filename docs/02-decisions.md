@@ -17,6 +17,9 @@ Record of confirmed decisions. Newest at bottom. Each entry: date, decision, rat
 | 2026-09-14 | UI theme | **Option A - Slate + Stock Green** (light mode). Primary #334155, On-Primary #FFFFFF, Secondary #475569, Accent #059669, Background #F8FAFC, Foreground #0F172A, Card #FFFFFF, Muted #F2F3F4, Muted-FG #64748B, Border #E6E8EA, Destructive #DC2626, Ring #334155. Conventions: green = profit/stock-in, red = debt/loss/stock-out. Source: ui-ux-pro-max palette DB (Inventory & Stock Management) |
 | 2026-09-14 | Dev ports | Web dev server: **26262** (app/package.json `web` script). Backend API: **26260** (server default PORT). App API base: http://localhost:26260 |
 | 2026-09-14 | UI testing tooling | Playwright + Chromium installed at repo root (`tools/screenshot.mjs`) for app screenshots + JS error capture. Use after starting web dev server: `node tools/screenshot.mjs [--url /route] [--mobile]` |
+| 2026-09-16 | Repo | Monorepo committed to https://github.com/up209d/a-duong-manager.git (branch main). Root `.gitignore`: node_modules, .expo/dist, app/ios + app/android, .codegraph index, server/data/*.db, tools/shots |
+| 2026-09-16 | iOS target / bundle id | App ported to native iOS. Bundle id `com.up209d.aplusmanager` (confirmed by Duc). Native project generated via `npx expo prebuild --platform ios`; `app/ios/` stays gitignored, regenerate anytime. Xcode project name: AManager (from "A+Manager") |
+| 2026-09-16 | API base per platform | Web: same-origin through gateway :26261 or tunnel (no env needed). Native iOS: `EXPO_PUBLIC_API_BASE` in `app/.env` (template: `.env.example`) - simulator http://localhost:26261, physical iPhone = Mac LAN IP on same Wi-Fi |
 
 ## Pending decisions (see 03-open-questions.md)
 
